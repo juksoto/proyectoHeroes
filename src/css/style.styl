@@ -9,23 +9,24 @@ flex-version = flex
 /*
 * Import fonts
 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import "font.styl"
 
 //
 // We declare the fonts for the headers, the content, the main font and the secondary font.
 //
 
 fontForHeaders()
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Lato', sans-serif;
 
 fontForContent()
-	font-family:  'Work Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 
 fontMain()
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 
 fontSecondary()
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Lato', sans-serif;
 	
 // Parameters
 
@@ -33,10 +34,9 @@ fontSecondary()
 fontSize 		= 16px
 
 //Color Web Entitie
-colorPrimary 	= #004884
-colorDos  		= #3366CC
+colorUno 		= #1cbbb4
+colorDos  		= #ffad1d
 colorTres 		= #E5EEFB
-colorEntidad 	= #3366CC
 
 colorVisited 		= colorDos
 colorFaltaunDia 	= #F3561F
@@ -84,7 +84,7 @@ body
 		font-size 16px !important
 		
 h1, h2, h3, h4, h5, h6
-	color colorPrimary
+	color colorUno
 	fontForHeaders()	
 	
 .ui-widget
@@ -93,4 +93,94 @@ h1, h2, h3, h4, h5, h6
 a
 	color colorDos
 	&:hover, &:focus, &:visited
-		color colorPrimary
+		color colorUno
+
+/** custom layout **/
+header
+	position absolute
+	top 0
+	left 0
+	width 100%
+	.navbar-brand
+		display block 
+		figure
+			max-width 200px
+			width 100%
+		img
+			width 100%
+			height auto
+	.navMenu
+		.nav-item
+			.nav-link 
+				color white
+				padding 0.5em
+				&:hover, &:focus
+					background-color colorUno
+					color white
+					outline none
+.top
+	background url("../img/background_top.jpg") no-repeat
+	background-size:cover;
+	background-position: center;
+	min-height 33vh
+	padding-top 5em   
+.uVentana
+	background-color rgba(black, 0.8)
+	padding 0
+	.ventanaContainer
+		padding 2em
+		h2
+			font-size 0.9em
+			color white
+			font-weight 300
+			span 
+				font-size 3em
+				display block
+				font-weight 500
+		p
+			color white
+		a
+			text-decoration underline
+			color white
+			&:hover, &:focus
+				color colorUno
+	.ventanaActions
+		ul
+			padding 0
+			list-style none
+			margin 0
+			li 
+				padding 0
+				margin 0
+				button
+					width 100%
+					background-color colorUno
+					color white
+					border 0
+					display block
+					text-align center
+					padding  1em
+					font-size 2em
+					&.btnLike--up
+						background-color colorUno
+						&:hover, &:focus
+							outline none
+							background-color doDark(colorUno)
+							color white
+					&.btnLike--down
+						background-color colorDos
+						&:hover, &:focus
+							outline none
+							background-color doDark(colorDos)
+							color white
+@media screen and (min-width 768px)
+	.navMenu
+		text-align  right
+		.nav
+			display flex
+			justify-content space-between
+			width 100%
+	.uVentana
+		margin-top 2em
+		margin-bottom:  2em 
+		
