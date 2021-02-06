@@ -1,0 +1,96 @@
+/*
+* Proyectos Heroes 
+* [name project]
+*/	
+flex-version = flex
+@import "nib"
+
+
+/*
+* Import fonts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+//
+// We declare the fonts for the headers, the content, the main font and the secondary font.
+//
+
+fontForHeaders()
+	font-family: 'Montserrat', sans-serif;
+
+fontForContent()
+	font-family:  'Work Sans', sans-serif;
+
+fontMain()
+	font-family: 'Work Sans', sans-serif;
+
+fontSecondary()
+	font-family: 'Montserrat', sans-serif;
+	
+// Parameters
+
+// Font Size Body
+fontSize 		= 16px
+
+//Color Web Entitie
+colorPrimary 	= #004884
+colorDos  		= #3366CC
+colorTres 		= #E5EEFB
+colorEntidad 	= #3366CC
+
+colorVisited 		= colorDos
+colorFaltaunDia 	= #F3561F
+colorSuccess 		= #069169
+colorError	 		= #A80521
+colorInfo 			= #47abce
+colorFontInfo		= #1F4788
+colorWarning 		= #FFAB00
+
+// scale gray
+colorGrayDark  = #333
+colorGrayLigth 	= #efefef
+
+// Procesa si el color es oscuro o claro y genera el contraste
+	isDarkoLigth(color)
+		if luminosity(color) >= .5
+			return colorGrayDark
+		else
+			return white
+	// Hacer un color % mas oscuro o claro
+	doDark(color)
+		return darken(color, 20%)
+	doLight(color)
+		return lighten(color, 50%)
+		
+/*
+* Estilos Base 
+* [description] 
+*/
+html
+	font-size 16px
+	
+body
+	font-size fontSize
+	fontForContent()
+	overflow-x hidden
+	font-weight 500
+	line-height 1.5em
+	color colorGrayDark
+	&.faFontLg
+		font-size 14px !important
+	&.faFont2x
+		font-size 20px
+	&.faFont3x
+		font-size 16px !important
+		
+h1, h2, h3, h4, h5, h6
+	color colorPrimary
+	fontForHeaders()	
+	
+.ui-widget
+	fontForContent()
+
+a
+	color colorDos
+	&:hover, &:focus, &:visited
+		color colorPrimary
