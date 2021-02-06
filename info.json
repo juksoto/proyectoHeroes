@@ -1,17 +1,21 @@
 [
     {
-      "name": "IronMan",
-      "urlFoto": "../img/imgIronMan.jpg",
+      "id": 1,
+      "destacado": true,
+      "name": "IronMan 2",
+      "urlFoto": "img/imgIronMan.jpg",
       "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
       "url": "https://ironman.marvel.com",
       "descUrl" : "consectetur adipisicing elit",
-      "likes": 60,
-      "dislikes": 40
+      "likes": 356,
+      "dislikes": 220
 
     },
     {
+    "id": 2,
+     "destacado": false,
     "name": "SuperMan",
-    "urlFoto": "../img/imgSuperMan.jpg",
+    "urlFoto": "img/imgSuperMan.jpg",
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     "url": "https://superman.marvel.com",
     "descUrl" : "consectetur adipisicing elit",
@@ -20,26 +24,32 @@
 
     },
     {
+        "id": 3,
+         "destacado": false,
         "name": "Thor",
-        "urlFoto": "../img/imgThor.jpg",
+        "urlFoto": "img/imgThor.jpg",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
         "url": "https://thor.marvel.com",
         "descUrl" : "consectetur adipisicing elit",
-        "likes": 80,
-        "dislikes":20
+        "likes": 25,
+        "dislikes":65
     },
     {
+        "id": 4,
+         "destacado": false,
         "name": "Batman",
-        "urlFoto": "../img/imgBatman.jpg",
+        "urlFoto": "img/imgBatman.jpg",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
         "url": "https://batman.marvel.com",
         "descUrl" : "consectetur adipisicing elit",
         "likes": 30,
         "dislikes": 70
-    }
+    },
     {
+        "id": 5,
+         "destacado": false,
         "name": "Spiderman",
-        "urlFoto": "../img/imgSpiderman.jpg",
+        "urlFoto": "img/imgSpiderman.jpg",
         "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
         "url": "https://spiderman.marvel.com",
         "descUrl" : "consectetur adipisicing elit",
