@@ -101,6 +101,7 @@ header
 	top 0
 	left 0
 	width 100%
+	background linear-gradient(180deg, rgba(0,0,0,0.8883928571428571) 0%, rgba(0,0,0,0.7035189075630253) 35%, rgba(0,0,0,0) 100%);
 	.navbar-brand
 		display block 
 		figure
@@ -113,20 +114,47 @@ header
 		.nav-item
 			.nav-link 
 				color white
-				padding 0.5em
+				padding 0.5em 1em
+				border-radius 0.3em
 				&:hover, &:focus
 					background-color colorUno
 					color white
 					outline none
+.uVotos
+	background-color transparent
+	width 100%
+	position relative
+	display flex
+	.uVotosItem
+		position relative
+		width 10%
+		padding 0.5em
+		font-size 1em
+		p
+			margin 0
+		&.votosLike
+			background-color rgba(colorUno, 0.8)
+			color white
+			width 50%
+			text-align right
+		&.votosDisLike
+			width 50%
+			background-color rgba(colorDos, 0.8)
+			color white
+			text-align left
 .top
 	background url("../img/background_top.jpg") no-repeat
 	background-size:cover;
 	background-position: center;
 	min-height 33vh
-	padding-top 5em   
+	padding-top 8em  
+	.uVotos .uVotosItem
+		font-size 3em
+
 .uVentana
 	background-color rgba(black, 0.8)
 	padding 0
+	backdrop-filter blur(8px)
 	.ventanaContainer
 		padding 2em
 		h2
@@ -173,6 +201,92 @@ header
 							outline none
 							background-color doDark(colorDos)
 							color white
+
+.alertInfo
+	.alert
+		display flex
+		background-color colorGrayLigth
+		justify-content center
+		align-items center
+		margin-top 2em
+		h2
+			color colorGrayDark
+			font-size 1.1em
+			width 20%
+			text-align center
+			margin 0
+		p
+			margin 0
+			padding-left 1em
+.cardsHeroes
+	padding-top 2em
+	padding-bottom 2em
+	h2
+		color colorGrayDark
+	.cardItem
+		margin-bottom 1em
+		.uCardItem
+			background-color colorGrayLigth
+			padding-top 200px
+			padding-left  2em
+			padding-right 2em
+			padding-bottom 3em
+			position relative
+			&:before
+				content ""
+				display block
+				background: linear-gradient(0deg, rgba(0,0,0,0.8883928571428571) 0%, rgba(0,0,0,0.7035189075630253) 21%, rgba(0,0,0,0) 80%);
+				position absolute
+				left 0
+				bottom 0
+				z-index 0
+				width 100%
+				height 100%
+			.titleCard
+				font-size 1.2em
+				color white
+				max-height 1.2em
+				height 1.2em
+				z-index 1
+				position relative
+				overflow hidden
+			.descriptionCard
+				color white
+				z-index 1
+				position relative
+				max-height 3em
+				height 3em
+				font-size 0.9em
+				overflow hidden
+			.uCardActions
+				display flex
+				justify-content space-between
+				z-index 1
+				position relative
+				p
+					font-size 0.8em
+					font-weigth 400
+					margin 0
+					width 40%
+					text-align right
+					color white
+				.actionBtn
+					text-align left
+					.btn
+						display inline-block
+						color white
+						font-size 0.9em
+						border 1px solid white
+						padding 0.5em 1em
+						&:hover, &:focus
+							background-color colorUno
+							border-color colorUno
+		.uVotos
+			position absolute
+			left 0
+			bottom 0
+			wisrh 100%
+
 @media screen and (min-width 768px)
 	.navMenu
 		text-align  right
@@ -184,3 +298,20 @@ header
 		margin-top 2em
 		margin-bottom:  2em 
 		
+footer
+	padding 1em
+	border-top 1px dashed #ccc
+	.footer
+		a
+			color colorGrayDark
+			text-decoration underline
+			font-size 0.8em
+			&:hover , &:focus
+				color colorUno
+	.redesSociales
+		a
+			color colorGrayDark
+			text-decoration none
+			font-size 1.8em
+			&:hover , &:focus
+				color colorUno
