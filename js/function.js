@@ -210,12 +210,13 @@ function changeVoto(voto){
 
 function updateVotosLocalStorage()
 {
+    var votosLike = document.querySelector(".top .uVotos .votosLike");
+    var votosDisLike = document.querySelector(".top .uVotos .votosDisLike");
+
+    var cantLikes = localStorage.getItem("votosLike");
+    var cantDislikes = localStorage.getItem("votosDisLike");
+
     if (localStorage.getItem("votosLike") != null) {
-        var votosLike = document.querySelector(".top .uVotos .votosLike");
-        var votosDisLike = document.querySelector(".top .uVotos .votosDisLike");
-    
-        var cantLikes = localStorage.getItem("votosLike");
-        var cantDislikes = localStorage.getItem("votosDisLike");
     
         // actualizar los votos
         votosLike.setAttribute('data-votos', cantLikes);
@@ -224,8 +225,9 @@ function updateVotosLocalStorage()
         renderVotos(votosLike , votosDisLike )
       }
       else{
-        votosLike.setAttribute('data-votos', 10);
-        votosDisLike.setAttribute('data-votos', 10);
+
+        localStorage.setItem("votosLike", 10);
+        localStorage.setItem("votosDisLike", 10);
       }
 }
 
