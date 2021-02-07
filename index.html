@@ -22,9 +22,9 @@
 	
 				</div>
 				<!-- Encabezado Menu -->
-				<nav class="navbar navbar-expand-lg col-xs-12 offset-md-2 col-md-7 ">
+				<nav class="navbar navbar-expand-md col-xs-12 offset-lg-2 col-md-9  col-lg-7 ">
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMenu" aria-controls="navBarMenu" aria-expanded="false" aria-label="Toggle navigation">
-						Menú <span class="fas fa-bars"></span>
+						Menú <span class="icon-bars"></span>
 					</button>
 					<div class="collapse navbar-collapse navMenu" id="navBarMenu">
 						<ul class="navbar-nav nav">
@@ -82,7 +82,7 @@
 		<section class="top">
 			<div class="container">
 				<div class="row">
-					<div class="col-5 uVentana">
+					<div class="col-12 col-md-6 col-lg-5 uVentana uVentanaHome">
 						<div class="ventanaContainer">
 							<h2>
 								Dinos tu opinión sobre <span>Ironman</span> 
@@ -95,12 +95,48 @@
 						<div class="ventanaActions">
 							<ul class="row">
 								<li class="col">
-									<button class="btnLike btnLike--up"><i class="icon-thumbs-up"></i></button>
+									<button class="btnLike btnLike--up" id="votarLike"><i class="icon-thumbs-up"></i></button>
 								<li class="col">
-									<button class="btnLike btnLike--down"><i class="icon-thumbs-down"></i></button>
+									<button class="btnLike btnLike--down"  id="votarDisLike"><i class="icon-thumbs-down"></i></button>
 								</li>	
 							</ul>
 						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-5 uVentana uVentana_like d-none">
+						<div class="ventanaContainer">
+							<h2>
+								 Marvel Ironman 
+							</h2>
+							<div class="headerVoto">
+								<i class="icon-thumbs-up"></i>
+								<p>
+									Tu voto sido registrado.
+								</p>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione voluptatum quam nesciunt enim ad dolor repellat, at iste! Repudiandae odio voluptatem necessitatibus voluptatum, similique cupiditate nam sunt nisi ut porro.
+							</p>
+							<a href="#" class="votarNuevo btn"> Votar nuevamente</a>
+						</div>
+						
+					</div>
+					<div class="col-12 col-md-6 col-lg-5 uVentana uVentana_dislike d-none">
+						<div class="ventanaContainer">
+							<h2>
+								 Marvel Ironman 
+							</h2>
+							<div class="headerVoto">
+								<i class="icon-thumbs-down"></i>
+								<p>
+									Tu voto sido registrado.
+								</p>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione voluptatum quam nesciunt enim ad dolor repellat, at iste! Repudiandae odio voluptatem necessitatibus voluptatum, similique cupiditate nam sunt nisi ut porro.
+							</p>
+							<a href="#" class="votarNuevo btn"> Votar nuevamente</a>
+						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -136,23 +172,25 @@
 				</h2>
 				<div class="row">
 					<!-- card -->
-					<article class="col cardItem">
+					<article class="col-12 col-sm-6 cardItem">
 						<div class="uCardItem">
-							<h3 class=titleCard>
-								<span class="icono"></span>
-								Titulo de la pelicula
-							</h3>
-							<p class="descriptionCard">
-								Descripción corta de la película
-							</p>
-							<div class="uCardActions">
-								<div class="actionBtn">
-									<a href="#" class="btn">Ver detalle</a>
-								
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet consectetur
+							<div class="cardContent">
+								<h3 class=titleCard>
+									<span class="icono"></span>
+									Titulo de la pelicula
+								</h3>
+								<p class="descriptionCard">
+									Descripción corta de la película
 								</p>
+								<div class="uCardActions">
+									<div class="actionBtn">
+										<a href="#" class="btn">Ver detalle</a>
+									
+									</div>
+									<p>
+										Lorem ipsum dolor sit amet consectetur
+									</p>
+								</div>
 							</div>
 							<div class="uVotos">
 								<div class="uVotosItem votosLike">
@@ -166,23 +204,25 @@
 					</article>
 					<!-- end card -->
 					<!-- card -->
-					<article class="col cardItem">
+					<article class="col-12 col-sm-6 cardItem">
 						<div class="uCardItem">
-							<h3 class=titleCard>
-								<span class="icono"></span>
-								Titulo de la pelicula
-							</h3>
-							<p class="descriptionCard">
-								Descripción corta de la película
-							</p>
-							<div class="uCardActions">
-								<div class="actionBtn">
-									<a href="#" class="btn">Ver detalle</a>
-								
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet consectetur
+							<div class="cardContent">
+								<h3 class=titleCard>
+									<span class="icono"></span>
+									Titulo de la pelicula
+								</h3>
+								<p class="descriptionCard">
+									Descripción corta de la película
 								</p>
+								<div class="uCardActions">
+									<div class="actionBtn">
+										<a href="#" class="btn">Ver detalle</a>
+									
+									</div>
+									<p>
+										Lorem ipsum dolor sit amet consectetur
+									</p>
+								</div>
 							</div>
 							<div class="uVotos">
 								<div class="uVotosItem votosLike">
@@ -197,23 +237,25 @@
 					<!-- end card -->
 					<div class="w-100"></div>
 					<!-- card -->
-					<article class="col cardItem">
+					<article class="col-12 col-sm-6 cardItem">
 						<div class="uCardItem">
-							<h3 class=titleCard>
-								<span class="icono"></span>
-								Titulo de la pelicula
-							</h3>
-							<p class="descriptionCard">
-								Descripción corta de la película
-							</p>
-							<div class="uCardActions">
-								<div class="actionBtn">
-									<a href="#" class="btn">Ver detalle</a>
-								
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet consectetur
+							<div class="cardContent">
+								<h3 class=titleCard>
+									<span class="icono"></span>
+									Titulo de la pelicula
+								</h3>
+								<p class="descriptionCard">
+									Descripción corta de la película
 								</p>
+								<div class="uCardActions">
+									<div class="actionBtn">
+										<a href="#" class="btn">Ver detalle</a>
+									
+									</div>
+									<p>
+										Lorem ipsum dolor sit amet consectetur
+									</p>
+								</div>
 							</div>
 							<div class="uVotos">
 								<div class="uVotosItem votosLike">
@@ -227,23 +269,25 @@
 					</article>
 					<!-- end card -->
 					<!-- card -->
-					<article class="col cardItem">
+					<article class="col-12 col-sm-6 cardItem">
 						<div class="uCardItem">
-							<h3 class=titleCard>
-								<span class="icono"></span>
-								Titulo de la pelicula
-							</h3>
-							<p class="descriptionCard">
-								Descripción corta de la película
-							</p>
-							<div class="uCardActions">
-								<div class="actionBtn">
-									<a href="#" class="btn">Ver detalle</a>
-								
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet consectetur
+							<div class="cardContent">
+								<h3 class=titleCard>
+									<span class="icono"></span>
+									Titulo de la pelicula
+								</h3>
+								<p class="descriptionCard">
+									Descripción corta de la película
 								</p>
+								<div class="uCardActions">
+									<div class="actionBtn">
+										<a href="#" class="btn">Ver detalle</a>
+									
+									</div>
+									<p>
+										Lorem ipsum dolor sit amet consectetur
+									</p>
+								</div>
 							</div>
 							<div class="uVotos">
 								<div class="uVotosItem votosLike">
@@ -258,7 +302,6 @@
 				</div>
 			</section>
 		</section>
-	
 		<!-- end contenido-->
 	</main>
 	<footer>

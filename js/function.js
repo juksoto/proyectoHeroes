@@ -1,5 +1,6 @@
 // Selector para el home
 
+var localStorage = window.localStorage;
 
 function leerJson()
 {
@@ -14,12 +15,11 @@ function leerJson()
         const heroes = request.response;
         showHeaderHeroe(heroes);
         showCardHeroes(heroes);
-        console.log(heroes)
     }
 }
 
 function showHeaderHeroe(jsonObj) {
-    var sectionTop = document.querySelector('.top .ventanaContainer');
+    var sectionTop = document.querySelector('.top .uVentanaHome .ventanaContainer');
     var nameHeroe = sectionTop.querySelector('h2 span');
     var descHeroe = sectionTop.querySelector('p');
     var urlHeroe = sectionTop.querySelector('.linkHeroe');
@@ -74,13 +74,12 @@ function showCardHeroes(jsonObj) {
                 var votosDisLike = cards[i].querySelector(".uVotos .votosDisLike");
                 
                 // actualizamos los datos con la información nueva
-                console.log(bgImage)
                 pathImg = "url('" + heroe[j].urlFoto + "')";
                 bgImage.style.backgroundImage= pathImg;
                 nameHeroe.innerHTML = heroe[j].name;
                 descHeroe.innerHTML = heroe[j].desc;
                 urlHeroe.setAttribute('href', heroe[j].url);
-                descUrl.innerHTML = heroe[j].desc;
+                descUrl.innerHTML = heroe[j].descUrl;
                 votosLike.setAttribute('data-votos', heroe[j].likes);
                 votosLike.setAttribute('data-id', heroe[j].id);
                 votosDisLike.setAttribute('data-votos', heroe[j].dislikes);
@@ -152,5 +151,88 @@ function showCardHeroes(jsonObj) {
     return false;
   }
 
+/**** actualizar los votos */
+function votar(){
+    var ventanaHome = document.querySelector(".top .uVentanaHome");
+    var ventanaLike = document.querySelector(".top .uVentana_like");
+    var ventanaDislike = document.querySelector(".top .uVentana_dislike");
+    
+    var buttonLike = document.querySelector('#votarLike');
+    var buttonDisLike =  document.querySelector('#votarDisLike');
 
-leerJson()
+    //agregamos los eventos
+    buttonLike.addEventListener("click", function(){changeVoto(1)});
+    buttonDisLike.addEventListener("click", function(){changeVoto(-1)});
+    // ocultamos las ventanas y mostramos la de home
+    document.querySelectorAll('.votarNuevo').forEach(item => {
+        item.addEventListener('click', event => {
+            ventanaHome.classList.remove("d-none");
+            ventanaLike.classList.add("d-none");
+            ventanaDislike.classList.add("d-none");
+        })
+      })
+}
+
+function changeVoto(voto){
+    // cargamos los contenedores
+    var votosLike = document.querySelector(".top .uVotos .votosLike");
+    var votosDisLike = document.querySelector(".top .uVotos .votosDisLike");
+    var ventanaHome = document.querySelector(".top .uVentanaHome");
+    var ventanaLike = document.querySelector(".top .uVentana_like");
+    var ventanaDislike = document.querySelector(".top .uVentana_dislike");
+
+    // capturamos los votos actuales
+    cantLikes = parseInt(votosLike.getAttribute("data-votos"));
+    cantDislikes =  parseInt(votosDisLike.getAttribute("data-votos"));
+    
+    ventanaHome.classList.add("d-none");
+    
+    // sumamos o restamos de acuerdo al voto. Actualizamos los campos data
+    if(voto > 0)
+    {
+        cantLikes ++;
+        votosLike.setAttribute('data-votos', cantLikes);
+        localStorage.setItem("votosLike", cantLikes);
+        ventanaLike.classList.remove("d-none");
+
+    }
+    else
+    {
+        cantDislikes ++ ;
+        votosDisLike.setAttribute('data-votos', cantDislikes);
+        localStorage.setItem("votosDisLike", cantDislikes);
+        ventanaDislike.classList.remove("d-none");
+    }
+
+    // realizamos el render de los votos
+    renderVotos(votosLike , votosDisLike )
+}
+
+function updateVotosLocalStorage()
+{
+    if (localStorage.getItem("votosLike") != null) {
+        var votosLike = document.querySelector(".top .uVotos .votosLike");
+        var votosDisLike = document.querySelector(".top .uVotos .votosDisLike");
+    
+        var cantLikes = localStorage.getItem("votosLike");
+        var cantDislikes = localStorage.getItem("votosDisLike");
+    
+        // actualizar los votos
+        votosLike.setAttribute('data-votos', cantLikes);
+        votosDisLike.setAttribute('data-votos', cantDislikes);
+    
+        renderVotos(votosLike , votosDisLike )
+      }
+}
+
+
+/** ejecutamos */
+$(function() {
+    leerJson()
+    votar()
+    // guardar en localstorage
+    setTimeout(function () {
+        updateVotosLocalStorage()
+    },500);
+});
+

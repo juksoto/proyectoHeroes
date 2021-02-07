@@ -102,6 +102,7 @@ header
 	left 0
 	width 100%
 	background linear-gradient(180deg, rgba(0,0,0,0.8883928571428571) 0%, rgba(0,0,0,0.7035189075630253) 35%, rgba(0,0,0,0) 100%);
+	z-index 2
 	.navbar-brand
 		display block 
 		figure
@@ -120,6 +121,34 @@ header
 					background-color colorUno
 					color white
 					outline none
+@media screen and (max-width 768px)
+	.navbar-toggler
+		position absolute
+		top -85px
+		right 16px
+		background-color white
+		font-size 0
+		padding 5px
+		width 50px
+		height 50px
+		span
+			color black
+			font-size 20px
+	header 
+		.navbar-nav
+			background-color white
+			text-align center
+		nav 
+			.dropdownMenu
+				list-style none
+				text-align center
+		.navMenu 
+			.nav-item .nav-link
+				color black
+				&:hover, &:focus
+					background-color colorUno
+					color white	 
+
 .uVotos
 	background-color transparent
 	width 100%
@@ -172,6 +201,16 @@ header
 			color white
 			&:hover, &:focus
 				color colorUno
+			&.btn
+				background-color transparente
+				border 1px solid white
+				color white
+				text-decoration none
+				&:hover, &:focus
+					background-color colorUno
+					border-color colorUno
+					color white
+
 	.ventanaActions
 		ul
 			padding 0
@@ -201,20 +240,69 @@ header
 							outline none
 							background-color doDark(colorDos)
 							color white
-
+	&.uVentana_like
+		.ventanaContainer
+			h2
+				font-size 2em
+				color white
+				font-weight 300
+			span 
+				font-size 1em
+			.headerVoto
+				display flex
+				align-items center
+				padding-bottom 1em
+				padding-top 1em
+				i
+					background-color colorUno
+					width 50px
+					height 50px
+					text-align center
+					color white
+					font-size 2em
+					padding 8px
+				p
+					vertical-align middle
+					font-size 1.5em
+					margin-bottom 0
+					padding-left 0.5em
+					font-weight 600
+	&.uVentana_dislike
+		.ventanaContainer
+			h2
+				font-size 2em
+				color white
+				font-weight 300
+			span 
+				font-size 1em
+			.headerVoto
+				display flex
+				align-items center
+				padding-bottom 1em
+				padding-top 1em
+				i
+					background-color colorDos
+					width 50px
+					height 50px
+					text-align center
+					color white
+					font-size 2em
+					padding 8px
+				p
+					vertical-align middle
+					font-size 1.5em
+					margin-bottom 0
+					padding-left 0.5em
+					font-weight 600
 .alertInfo
 	.alert
-		display flex
+		display block
 		background-color colorGrayLigth
-		justify-content center
-		align-items center
 		margin-top 2em
 		h2
 			color colorGrayDark
 			font-size 1.1em
-			width 20%
 			text-align center
-			margin 0
 		p
 			margin 0
 			padding-left 1em
@@ -227,10 +315,10 @@ header
 		margin-bottom 1em
 		.uCardItem
 			background-color colorGrayLigth
-			padding-top 200px
-			padding-left  2em
-			padding-right 2em
+			background-size cover
+			background-position center
 			padding-bottom 3em
+			min-height 30em
 			position relative
 			&:before
 				content ""
@@ -242,6 +330,13 @@ header
 				z-index 0
 				width 100%
 				height 100%
+			.cardContent
+				position absolute
+				bottom 2.8em
+				left 0
+				width 100%
+				padding 1em
+				padding-bottom 0
 			.titleCard
 				font-size 1.2em
 				color white
@@ -259,15 +354,13 @@ header
 				font-size 0.9em
 				overflow hidden
 			.uCardActions
-				display flex
-				justify-content space-between
+				display block
 				z-index 1
 				position relative
 				p
 					font-size 0.8em
-					font-weigth 400
+					font-weight 400
 					margin 0
-					width 40%
 					text-align right
 					color white
 				.actionBtn
@@ -283,10 +376,9 @@ header
 							border-color colorUno
 		.uVotos
 			position absolute
+			width 100%
 			left 0
 			bottom 0
-			wisrh 100%
-
 @media screen and (min-width 768px)
 	.navMenu
 		text-align  right
@@ -297,6 +389,31 @@ header
 	.uVentana
 		margin-top 2em
 		margin-bottom:  2em 
+	.alertInfo .alert
+		display flex
+		justify-content center
+		align-items center
+		h2
+			width 30%
+			margin 0
+	.cardsHeroes .cardItem .uCardItem .uCardActions
+		display flex
+		justify-content space-between
+
+@media screen and (max-width 768px)
+	.top .container
+		padding-left 2em
+		padding-right 2em
+		padding-bottom 2em
+	
+@media screen and (max-width 540px)
+	.top .uVotos .uVotosItem
+		font-size 2em
+@media screen and (max-width 240px)
+	.top .uVotos .uVotosItem
+		font-size 1em
+
+
 		
 footer
 	padding 1em
