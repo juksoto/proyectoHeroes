@@ -223,6 +223,10 @@ function updateVotosLocalStorage()
     
         renderVotos(votosLike , votosDisLike )
       }
+      else{
+        votosLike.setAttribute('data-votos', 10);
+        votosDisLike.setAttribute('data-votos', 10);
+      }
 }
 
 
