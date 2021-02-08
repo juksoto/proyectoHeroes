@@ -6,7 +6,7 @@
       "urlFoto": "img/imgIronMan.jpg",
       "desc": "Tony Stark, es  el hijo del millonario industrial y dueño de Industrias Stark, Howard Stark, y Maria Stark, nace en Long Island",
       "url": "https://ironman.marvel.com",
-      "descUrl" : "consectetur adipisicing elit",
+      "descUrl" : "1 mes atrás",
       "likes": 10,
       "dislikes": 10
 
@@ -18,7 +18,7 @@
     "urlFoto": "img/img_superman.jpg",
     "desc": "Superman es un hombre alto, musculoso, hombre de raza blanca con ojos azules y pelo negro corto con un rizo. Superman, siempre lleva su uniforme azul con su famoso rojo y amarillo escudo de S en el pecho, un cinturón amarillo, botas rojas y una capa roja.",
     "url": "https://superman.marvel.com",
-    "descUrl" : "consectetur adipisicing elit",
+    "descUrl" : "1 mes atrás",
     "likes": 55,
     "dislikes": 45
 
@@ -30,7 +30,7 @@
         "urlFoto": "img/imgThor.jpg",
         "desc": "Thor era uno de los dioses nórdicos más conocidos. Era el más fuerte de los dioses, protegía a la juventud, al rayo, al fuego y a la arquitectura. Era hijo del dios Odín y Jörd",
         "url": "https://thor.marvel.com",
-        "descUrl" : "consectetur adipisicing elit",
+        "descUrl" : "1 mes atrás",
         "likes": 25,
         "dislikes":65
     },
@@ -41,7 +41,7 @@
         "urlFoto": "img/imgBatman.jpg",
         "desc": "Bruno Díaz, un joven empresario, millonario y soltero que perdió a sus padres a manos de un criminal cuando era chico; y por otro lado, Batman, el hombre murciélago.",
         "url": "https://batman.marvel.com",
-        "descUrl" : "consectetur adipisicing elit",
+        "descUrl" : "2 meses atrás",
         "likes": 30,
         "dislikes": 70
     },
@@ -52,7 +52,7 @@
         "urlFoto": "img/imgSpiderman.jpg",
         "desc": "Spiderman es un superhéroe decidido, justiciero, atlético, valiente, astuto. Aparece en los momentos indicados para cumplir con su responsabilidad. Tiene un marcado valor por las personas y una debilidad especial por los más débiles.",
         "url": "https://spiderman.marvel.com",
-        "descUrl" : "consectetur adipisicing elit",
+        "descUrl" : "3 meses atrás",
         "likes": 80,
         "dislikes": 20
     }

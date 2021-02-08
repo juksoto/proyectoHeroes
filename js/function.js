@@ -85,7 +85,17 @@ function showCardHeroes(jsonObj) {
                 votosDisLike.setAttribute('data-votos', heroe[j].dislikes);
                 votosDisLike.setAttribute('data-id', heroe[j].id);
                 renderVotos(votosLike, votosDisLike);
-
+                // add icon like o dislike en el titulo de la card
+                if(heroe[j].likes >= heroe[j].dislikes)
+                {
+                    cards[i].classList.remove("cardDisLike");
+                    cards[i].classList.add("cardLike");
+                }
+                else
+                {
+                    cards[i].classList.remove("cardLike");
+                    cards[i].classList.add("cardDisLike");
+                }
                 //agreamos este id para validar que no se repita esta card
                 contadoresCard.push(heroe[j].id);
                 //cerramos este ciclo

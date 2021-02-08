@@ -202,7 +202,7 @@ header
 			&:hover, &:focus
 				color colorUno
 			&.btn
-				background-color transparente
+				background-color transparent
 				border 1px solid white
 				color white
 				text-decoration none
@@ -332,13 +332,22 @@ header
 				height 100%
 			.cardContent
 				position absolute
-				bottom 2.8em
+				bottom 3.2em
 				left 0
 				width 100%
 				padding 1em
 				padding-bottom 0
-			.titleCard
+			.iconVoto
+				display none
+				background-color colorUno
+				width 30px
+				height 30px
+				padding 5px
 				font-size 1.2em
+				text-align center
+				color white
+			.titleCard
+				font-size 2em
 				color white
 				max-height 1.2em
 				height 1.2em
@@ -374,11 +383,25 @@ header
 						&:hover, &:focus
 							background-color colorUno
 							border-color colorUno
+		&.cardLike
+			.iconVoto
+				display block
+				background-color colorUno
+				.icon-thumbs-down
+					display none
+		&.cardDisLike
+			.iconVoto
+				display block
+				background-color colorDos
+				.icon-thumbs-up
+					display none
+							
 		.uVotos
 			position absolute
 			width 100%
 			left 0
 			bottom 0
+
 @media screen and (min-width 768px)
 	.navMenu
 		text-align  right
@@ -396,9 +419,16 @@ header
 		h2
 			width 30%
 			margin 0
-	.cardsHeroes .cardItem .uCardItem .uCardActions
-		display flex
-		justify-content space-between
+	.cardsHeroes .cardItem .uCardItem 
+		.uCardActions
+			display flex
+			justify-content space-between
+		.cardContent
+			padding-left 2.5em
+			.iconVoto
+				position absolute
+				left 0
+				top 1.1em
 
 @media screen and (max-width 768px)
 	.top .container
